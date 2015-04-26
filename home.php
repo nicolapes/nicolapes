@@ -266,8 +266,6 @@ Vado a includere il database che si trova su phpMyAdmin per:
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="js/main.js"></script> <!-- Gem jQuery -->
 
-<?php if($_GET['home'])?>
-
 <div id="immagine">
     <img alt="colline" src="Cattura.jpg"/>
 </div>
