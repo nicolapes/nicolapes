@@ -267,7 +267,7 @@ Vado a includere il database che si trova su phpMyAdmin per:
 <script src="js/main.js"></script> <!-- Gem jQuery -->
 
 <div id="immagine">
-    <img alt="colline" src="Cattura.jpg"/>
+    <img alt="colline" src="./Cattura.JPG"/>
 </div>
 <div id="contenuto">
     <p>Dal 1975 in una incantevole e silenziosa vallata nel cuore della Sardegna,<br>
