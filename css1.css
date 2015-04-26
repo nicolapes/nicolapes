@@ -1,0 +1,70 @@
+@font-face {
+   font-family: 'Basic title';
+   src: local('basictitlefont'), url('basictitlefont.ttf') format('truetype');
+   src: url('basictitlefont.ttf') format('truetype');
+}
+
+@charset "utf-8";
+/* CSS Document */
+
+/* Ridimensiono l'immagine e la posiziono centralmente nella pagina */
+#imm_logo {
+	max-height:50%;
+	max-width:50%;
+	position: fixed;
+        left: 30%;
+        top: 20%;
+}
+
+
+#home {
+    font-size: xx-large;
+    position: fixed;
+    top: 60%;
+    left: 19%;
+    color: #FFFFFF;
+}
+
+#description {
+    font-size: xx-large;
+    position: fixed;
+    top: 60%;
+    left: 70%;
+    color: #FFFFFF;
+}
+
+#H{
+    font-size: 1500%;
+    position: fixed;
+    top: 30%;
+    left: 17%;
+    color: #FFFFFF;
+}
+
+#H:hover{
+    font-weight: bold;
+    color: #003333;
+}
+
+#D{
+    font-size: 1500%;
+    position: fixed;
+    top: 30%;
+    left: 72%;
+    color: #FFFFFF;
+}
+
+#D:hover{
+    color: #003333;
+    font-weight: bold;
+}
+
+* { 
+    font-family: Basic title, Arial, sans-serif; 
+    margin: 0; 
+    padding: 0; 
+}
+
+html { background: url(OPF_04.jpg) no-repeat center center fixed;
+    background-size: cover;
+}

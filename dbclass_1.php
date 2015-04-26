@@ -1,0 +1,50 @@
+<?php
+class DBclass_1{
+               //parametri per la connessione al database
+                    private $nomehost = 'localhost';
+                    private $nomeuser ='root';
+                    private $password = '';
+				//controllo sulle connessioni attive
+				private $attiva=false;
+
+				//nome del database
+				private $nomedb= 'amm14_pesNicola';
+				
+
+//funzione per la connessione a MySQL
+public function connetti()
+{
+  if(!$this -> attiva) // '!' � la negazione
+   {
+        if($connessione = mysql_connect ($this->nomehost, $this->nomeuser, $this->password) or die (mysql_error()))
+//funzione per connettersi a mysql
+     {
+        //sezione del database
+        $selezione = mysql_select_db($this->nomedb,$connessione) or die (mysql_error()); // ci da un ID, e selezioniamo il database a cui vogliamo operare
+     }
+          else {
+                 return true;
+                }
+    }				
+}
+
+//funzione per l'esecuzione delle Query
+public function query($sql)
+{
+if(isset($this->attiva))
+ {
+  $sql = mysql_query($sql) or die (mysql_error());
+  return $sql;
+  } else {
+    return false;
+  }//se c'� una connessine attiva non fa niente altrimenti atttiva la connessione
+ }//fine classe
+} ?>
+
+
+<?php //istanza dell'oggetto fuori dalla classe
+//istanza sull'oggetto della classe
+$db = new DBclass_1();
+
+//connessione al database
+$db ->connetti(); //si invoca il metodo connetti su qeusto oggetto
