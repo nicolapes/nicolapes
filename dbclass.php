@@ -1,23 +1,17 @@
 <?php
-
-function connetti ()
-{
-        $conn= mysql_connect("localhost","root","");   
-        //$conn= mysql_connect("localhost","cannasAlessio","volpe795");
-	if(!$conn)
-	{
-		die("connessione FALLITA".mysql_error());
-	}
-	
-
-	$db= mysql_select_db("amm14_pesNicola",$conn); 
-        //$db= mysql_select_db("amm14_cannasAlessio",$conn);
-	if(!$conn)
-	{
-		die("connessione FALLITA ad amm14_pesNicola".mysql_error());
-	}
-        
-        return $conn;
-}
-
-?>
+	session_start();
+    $ip =  "localhost";
+    $user = "pesNicola";
+    $password = "scimmia742";
+    $db = "amm14_pesNicola";
+    $mysqli = new mysqli();
+    $mysqli->connect($ip, $user, $password, $db);
+    
+    // verifico la presenza di errori
+    if($mysqli->connect_errno!= 0){
+        // gestione errore
+        $idErrore= $mysqli->connect_errno;
+        $msg= $mysqli->connect_error;
+        error_log("Errore nella connessione al server $idErrore: $msg", 0);
+        echo "Errore nella connessione $msg";
+    }
