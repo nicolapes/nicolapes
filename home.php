@@ -10,16 +10,20 @@ Si ringrazia il WEB.
 Nicola Pes
 ------------------------------------------------------------------------------------>
 
-<!-- Connessione al DB su PhpMyadmin -->
 <?php
-$conn = mysql_connect("localhost","pesNicola","scimmia742");
-
-if(!$conn){ 
-    die ("connessione FALLITA".mysql_error());
-}
-
-$db = mysql_select_db("amm14_pesNicola", $conn);
-#ora e' connesso!
+	   
+        $conn= mysql_connect("localhost","pesNicola","scimmia742");
+	if(!$conn)
+	{
+		die("connessione fallita!".mysql_error());
+	}
+	
+	//$db= mysql_select_db("amm_alessio",$conn); 
+        $db= mysql_select_db("amm14_pesNicola",$conn);
+	if(!$conn)
+	{
+		die("non riesco a selezionare il DB (amm14_pesNicola)".mysql_error());
+	}
 ?>
 
 <html>
@@ -30,9 +34,8 @@ Vado a includere il database che si trova su phpMyAdmin per:
 ------------------------------------------------------------------------------------->
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="it">
-<head role="banner">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<head>
+    <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <LINK REL="SHORTCUT ICON" HREF= "ico.ico">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -42,9 +45,7 @@ Vado a includere il database che si trova su phpMyAdmin per:
     <title>Formaggi Pes - Home</title>
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script src="script.js"></script>
-    <link href="http://fonts.googleapis.com/css?family=Play:400,700" rel="stylesheet" type="text/css">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+    
 </head>
 
     <header> <a href="home.php"><img id="logo" src="logo.gif" alt="" /></a>
@@ -59,83 +60,80 @@ Vado a includere il database che si trova su phpMyAdmin per:
 
           
     <body>
+        <form action="home.php" method="get">
         <div id="sinistra">        
 <div id='cssmenu'>
 <ul>
    <li><a href='#' method="get" name="menu">Home</a></li>
-   <li class='active has-sub' method="get" name="menu"><a href='#'>Prodotti</a>
+   <li class='active has-sub' method="get" name="prodotti"><a href='#'>Prodotti</a>
       <ul>
-         <li class='has-sub' method="get" name="menu"><a href='#'>Freschi</a>
+         <li class='has-sub' method="get" name="freschi"><a href='#'>Freschi</a>
             <ul>
-               <li><a href='#' method="get" name="menu">Giovane</a></li>
+               <li><a href='#' method="get" name="giovane">Giovane</a></li>
             </ul>
          </li>
-         <li class='has-sub'><a href='#' method="post" name="menu">Semistagionati</a>
+         <li class='has-sub'><a href='#' method="post" name="semistagionati">Semistagionati</a>
             <ul>
-               <li><a href='#' method="get" name="menu">Bonaera</a></li>
-               <li><a href='#' method="get" name="menu">Campizzolu</a></li>
+               <li><a href='#' method="get" name="bonaera">Bonaera</a></li>
+               <li><a href='#' method="get" name="campizzolu">Campizzolu</a></li>
             </ul>
          </li>
           
-         <li class='has-sub'><a href='#'>Stagionati</a>
+         <li class='has-sub'><a href='#' name="stagionati">Stagionati</a>
             <ul>
-               <li><a href='#' method="post" name="get">Lochele</a></li>
-               <li><a href='#' method="post" name="get">Sedilese</a></li>
+               <li><a href='#' method="get" name="lochele">Lochele</a></li>
+               <li><a href='#' method="get" name="sedilese">Sedilese</a></li>
             </ul>
          </li>
          <li class='has-sub'><a href='#'>Ricotta</a>
             <ul>
-               <li class='has-sub2'><a href='#' method="get" name="menu">Ricotta</a></li>
-               <li class='has-sub2'><a href='#' method="get" name="menu">Ricotta al basilico</a></li>
-               <li class='has-sub2'><a href='#' method="get" name="menu">Ricotta al peperoncino</a></li>
-               <li class='has-sub2'><a href='#' method="get" name="menu">Ricotta al limone</a></li>
+               <li class='has-sub2'><a href='#' method="get" name="ricotta">Ricotta</a></li>
+               <li class='has-sub2'><a href='#' method="get" name="ricottabasilico">Ricotta al basilico</a></li>
+               <li class='has-sub2'><a href='#' method="get" name="ricottapeperoncino">Ricotta al peperoncino</a></li>
+               <li class='has-sub2'><a href='#' method="get" name="ricottalimone">Ricotta al limone</a></li>
             </ul>
          </li>
-          <li class='has-sub'><a href='#'>Spalmabili</a>
+          <li class='has-sub'><a href='#' name="spalmabili">Spalmabili</a>
             <ul>
-               <li class='has-sub2'><a href='#' method="get" name="menu">Bonì Verde</a></li>
-               <li class='has-sub2'><a href='#' method="get" name="menu">Bonì Arancione</a></li>
-               <li class='has-sub2'><a href='#' method="get" name="menu">Bonì Rosso</a></li>
+               <li class='has-sub2'><a href='#' method="get" name="boniverde">Bonì Verde</a></li>
+               <li class='has-sub2'><a href='#' method="get" name="boniarancione">Bonì Arancione</a></li>
+               <li class='has-sub2'><a href='#' method="get" name="bonirosso">Bonì Rosso</a></li>
             </ul>
          </li></a></li>
       </ul>
    </li>
-   <li class='has-sub2'><a href='#' method="get" name="menu">Chi siamo</a></li>
-   <li class='has-sub2'><a href='#' method="get" name="menu">Dove siamo</a></li>
-   <li class='has-sub2'><a href='#' method="get" name="menu">Contatti</a></li>
+   <li class='has-sub2'><a href='#' method="get" name="chisiamo">Chi siamo</a></li>
+   <li class='has-sub2'><a href='#' method="get" name="dove siamo">Dove siamo</a></li>
+   <li class='has-sub2'><a href='#' method="get" name="contatti">Contatti</a></li>
 </ul>
 </div></div>
+        </form>
             
             
             <div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->
 		<div class="cd-user-modal-container"> <!-- this is the container wrapper -->
 			<ul class="cd-switcher">
-				<li><a href="#0">Login</a></li>
-				<li><a href="#0">Registrati</a></li>
+				<li><a>Login</a></li>
+				<li><a>Registrati</a></li>
 			</ul>
 
 			<div id="cd-login"> <!-- log in form -->
                             <form class="cd-form" action="login.php" method="post">
 					<p class="fieldset">	
 						<label class="image-replace cd-username" for="signup-username">Username</label>
-                                                <input class="full-width has-padding has-border" method="post" name="username" id="signup-username" type="text" placeholder="Username">
+                                                <input class="full-width has-padding has-border" name="username" id="signin-username" type="text" placeholder="Username">
 						<span class="cd-error-message">"C'è un messaggio di errore!"</span>
                                         </p>
 
 					<p class="fieldset">
 						<label class="image-replace cd-password" for="signin-password">Password</label>
-                                                <input class="full-width has-padding has-border" method="post" name="password" id="signin-password" type="password"  placeholder="Password">
+                                                <input class="full-width has-padding has-border" name="password" id="signin-password" type="password"  placeholder="Password">
 						<a href="#0" class="hide-password">Nascondi</a>
 						<span class="cd-error-message">"C'è un messaggio di errore!"</span>
 					</p>
 
 					<p class="fieldset">
-						<input type="checkbox" id="remember-me" checked>
-						<label for="remember-me">Ricordami</label>
-					</p>
-
-					<p class="fieldset">
-                                            <input class="full-width" type="submit" method="post" name="login" value="Login">
+                                            <input class="full-width" type="submit" name="login" value='Login'>
 					</p>
 				</form>
 				
@@ -269,10 +267,9 @@ Vado a includere il database che si trova su phpMyAdmin per:
 
             Il latte prodotto viene lavorato artigianalmente secondo le antiche regole dettate dalla migliore<br>
                 tradizione casearia sarda.</p><br><br>
-                        <u>Accedi per acquistare!</u>
+                        <div class='accedi'><b><u>Accedi per acquistare!</u></b></div>
+			</ul>
                         
-                        <?php session_start();
-                        ?>
 
 </div>
     </body>
@@ -293,6 +290,12 @@ Vado a includere il database che si trova su phpMyAdmin per:
         <a href="https://googleplus.com"><img class="visible4" src="go.png" onmouseout="this.src='go.png'" onmouseover="this.src='go1.png'" title="google+"></a>
             </div></div>
             <p class="copyright">La descrizione si trova <a href="descrizione.html">Qui</a><br>
-                    Developer: Nic Pes<br> © Formaggi Pes</p></footer>
+                    <?php
+                        if(isset($_SESSION["loggedIn"])&&$_SESSION["loggedIn"]){ 
+                            echo "Sei loggato come ".$username;
+                            javascript:close();
+                        }
+?>
+                    <br> © Formaggi Pes</p></footer>
 </div>
 </html>
