@@ -10,21 +10,6 @@ Si ringrazia il WEB.
 Nicola Pes
 ------------------------------------------------------------------------------------>
 
-<?php
-	   
-        $conn= mysql_connect("localhost","pesNicola","scimmia742");
-	if(!$conn)
-	{
-		die("connessione fallita!".mysql_error());
-	}
-	
-	//$db= mysql_select_db("amm_alessio",$conn); 
-        $db= mysql_select_db("amm14_pesNicola",$conn);
-	if(!$conn)
-	{
-		die("non riesco a selezionare il DB (amm14_pesNicola)".mysql_error());
-	}
-?>
 
 <html>
 <!----------------------------------------------------------------------------------- 
@@ -137,7 +122,7 @@ Vado a includere il database che si trova su phpMyAdmin per:
 					</p>
 				</form>
 				
-				<p class="cd-form-bottom-message"><a href="#0">Hai dimenticato la password?</a></p>
+				<p class="cd-form-bottom-message"><a href="#0">Non ricordi la password??</a></p>
 				<!-- <a href="#0" class="cd-close-form">Close</a> -->
 			</div> <!-- cd-login -->
 
