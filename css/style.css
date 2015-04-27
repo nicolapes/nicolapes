@@ -1,12 +1,4 @@
-@font-face {
-   font-family: 'Basic title';
-   src: local('basictitlefont'), url('basictitlefont.ttf') format('truetype');
-   src: url('basictitlefont.ttf') format('truetype');
-}
-
-
 #FP{
-   font-family: 'Times New Roman', serif;
    position: fixed;
    top: 1px;
    left: 1px;
@@ -16,11 +8,9 @@
 
 #FP:hover{
     color: #F0F078;
-    font-family: 'Times New Roman Bold', serif;
 }
 
 #secondo{
-   font-family: "Times New Roman", serif;
    position: fixed;
    top: 105px;
    left: 4px;
@@ -54,7 +44,6 @@ header{
     left: 0;
     font-size:100%;
     text-decoration: none;
-    font-family: Times New Roman, Verdana, Arial, sans-serif;
     border-bottom: solid black 3px;
     background-image: url("04.jpg");
     background-attachment: fixed;
@@ -101,14 +90,13 @@ footer{
     font-size: large;
     color: #307860;
     border-top: 3px solid black;
-    font-family: Times New Roman;
 }
 
 #foot_sx{
     position: absolute;
     font-size: 16px;
     left: 5px;
-    top: 10%;
+    top: 20%;
 }
 
 #down{
@@ -129,9 +117,8 @@ footer{
 
 
 .copyright{
-    font-family: Times New Roman, serif;
     position:absolute;
-    top:3px;
+    top:20%;
     left: 42%;
 }
 
@@ -139,6 +126,7 @@ footer{
 * {
     padding: 0;
     margin: 0;
+    font-family: 'Abel', sans-serif;
 }
 
 
@@ -148,7 +136,6 @@ html {
     width: 100%;
     height: 100%;
     margin-bottom: 1px;
-    font-family: Basic title, Verdana, Arial, sans-serif;
 }
 
 #logo{
@@ -172,7 +159,6 @@ html {
 
 
 ul#menu {
-    font-family: Times New Roman, sans-serif;
     font-size: 11px;
     margin: 0;
     padding: 0;
@@ -276,7 +262,6 @@ header[role=banner]::after {
   right: 2%;
   top: 5%;
   text-decoration: none;
-  font-family: 'Times New Roman', Verdana, Arial, serif;
   font-size: 100%;
   width:10%;
 }
@@ -615,7 +600,6 @@ xsigin/signup popup
     left: 65%;
     top: 27%;
     right: 0;
-    font-family: Times New Roman, serif;
     font-size: 24px;
     color: white;
 }

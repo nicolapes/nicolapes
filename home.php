@@ -1,6 +1,6 @@
 <!doctype html>
 
-<!-----------------------------------------------------------------------------------
+<!--
 Web developer: Nicola Pes;
 Utilizzo di: Html, css, php, ajax, jquery, mysql, javascript
 Progetto completato in data: 25/04/2015.
@@ -44,6 +44,7 @@ Vado a includere il database che si trova su phpMyAdmin per:
     <script src="script.js"></script>
     <link href="http://fonts.googleapis.com/css?family=Play:400,700" rel="stylesheet" type="text/css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
 </head>
 
     <header> <a href="home.php"><img id="logo" src="logo.gif" alt="" /></a>
@@ -56,17 +57,8 @@ Vado a includere il database che si trova su phpMyAdmin per:
             </ul></nav>
         </header>
 
-    
-            
-
-
-    
+          
     <body>
-        <?php
-            if(session_status() == 0) {
-            session_start();
-            }
-        ?>
         <div id="sinistra">        
 <div id='cssmenu'>
 <ul>
@@ -123,7 +115,7 @@ Vado a includere il database che si trova su phpMyAdmin per:
 			</ul>
 
 			<div id="cd-login"> <!-- log in form -->
-                            <form class="cd-form" action="" method="post">
+                            <form class="cd-form" action="login.php" method="post">
 					<p class="fieldset">	
 						<label class="image-replace cd-username" for="signup-username">Username</label>
                                                 <input class="full-width has-padding has-border" method="post" name="username" id="signup-username" type="text" placeholder="Username">
@@ -143,7 +135,7 @@ Vado a includere il database che si trova su phpMyAdmin per:
 					</p>
 
 					<p class="fieldset">
-						<input class="full-width" type="submit" method="post" value="Login">
+                                            <input class="full-width" type="submit" method="post" name="login" value="Login">
 					</p>
 				</form>
 				
@@ -260,11 +252,30 @@ Vado a includere il database che si trova su phpMyAdmin per:
 
 				<p class="cd-form-bottom-message"><a href="#0">Torna al login</a></p>
 			</div> <!-- cd-reset-password -->
+                        <?php
+                        session_start();
+                        if(isset($_REQUEST["login"])&&isset($_REQUEST["singup-username"])&&isset($_REQUEST["signup-password"])){
+    
+                        if(login($_REQUEST["signup-username"],$_REQUEST["signup-password"])){
+                            $_SESSION["loggedIn"]=true;
+                        }}else if(isset($_REQUEST["logout"])){
+                            logout();
+                            }function login($user,$password){if($user=="nic_pes"&&$password=="amm2014"){
+                            return true;
+}return false;
+} function logout(){
+        $_SESSION=array();
+        if(session_id()!=""||isset($_COOKIE[session_name()])){
+                    setcookie(session_name(),'',time() - 2592000, '/');
+        }
+        session_destroy();
+}?>	
 			<a href="#0" class="cd-close-form">Chiudi</a>
 		</div> <!-- cd-user-modal-container -->
 	</div> <!-- cd-user-modal -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="js/main.js"></script> <!-- Gem jQuery -->
+
 
 <div id="immagine">
     <img alt="colline" src="./Cattura.JPG"/>
@@ -275,7 +286,10 @@ Vado a includere il database che si trova su phpMyAdmin per:
 
             Il latte prodotto viene lavorato artigianalmente secondo le antiche regole dettate dalla migliore<br>
                 tradizione casearia sarda.</p><br><br>
-                        <u>Accedi per acquistare!</u></div>
+                        <u>Accedi per acquistare!</u>
+                        
+
+</div>
     </body>
 	
         
@@ -293,6 +307,7 @@ Vado a includere il database che si trova su phpMyAdmin per:
         <a href="https://twitter.com"> <img class="visible2" src="twi.png" onmouseout="this.src='twi.png'" onmouseover="this.src='twi1.png'" title="twitter"></a>
         <a href="https://googleplus.com"><img class="visible4" src="go.png" onmouseout="this.src='go.png'" onmouseover="this.src='go1.png'" title="google+"></a>
             </div></div>
-            <p class="copyright">La descrizione si trova <a href="descrizione.html">Qui</a><br><br> © Formaggi Pes</p></footer>
+            <p class="copyright">La descrizione si trova <a href="descrizione.html">Qui</a><br>
+                    Developer: Nic Pes<br> © Formaggi Pes</p></footer>
 </div>
 </html>
