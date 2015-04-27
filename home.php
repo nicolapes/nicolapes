@@ -1,3 +1,4 @@
+<!doctype html>
 
 <!--
 Web developer: Nicola Pes;
@@ -7,21 +8,22 @@ Titolo: Formaggi Pes (è un minicaseificio familiare con un vecchio sito su: www
 Si ringrazia il WEB.
 
 Nicola Pes
------------------------------------------------------------------------------------->
+-->
 
 
 <html>
-<!----------------------------------------------------------------------------------- 
+<!--
 Vado a includere il database che si trova su phpMyAdmin per:
 - gestire le sessioni; (compresa quella dell'amministratore con funzionalità dedicate)
 - gestire i formaggi;
-------------------------------------------------------------------------------------->
-<?php include_once "dbclass.php"
+-->
+
+<?php include 'dbclass.php';
 ?>
 
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
-<head>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+    <head>
     <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <LINK REL="SHORTCUT ICON" HREF= "ico.ico">
@@ -120,7 +122,7 @@ Vado a includere il database che si trova su phpMyAdmin per:
 					</p>
 
 					<p class="fieldset">
-                                            <input class="full-width" type="submit" name="login" value='Login'>
+                                            <input class="full-width" action='login.php' type="submit" value='Login'>
 					</p>
 				</form>
 				
@@ -134,7 +136,7 @@ Vado a includere il database che si trova su phpMyAdmin per:
 						<label class="image-replace cd-username" for="signup-username">Username</label>
                                                 <input class="full-width has-padding has-border" id="signup-username"
                                                        method="post"
-                                                       name="signup-username" type="signup-username" type="text" placeholder="Username">
+                                                       name="signup-username" type="text" placeholder="Username">
 						<span class="cd-error-message">"C'è un messaggio di errore!"</span>
 					</p>
 
@@ -158,7 +160,6 @@ Vado a includere il database che si trova su phpMyAdmin per:
                                         <p class="fieldset">
 						<label class="image-replace cd-username" for="signup-username">Nome</label>
 						<input class="full-width has-padding has-border" id="signup-username"
-                                                       method="post"
                                                        name="signup-username" type="text" placeholder="Nome">
 						<span class="cd-error-message">"C'è un messaggio di errore!"</span>
 					</p>
@@ -167,7 +168,6 @@ Vado a includere il database che si trova su phpMyAdmin per:
                                         <p class="fieldset">
 						<label class="image-replace cd-username" for="signup-username">Cognome</label>
 						<input class="full-width has-padding has-border" id="signup-cognome"
-                                                       method="post"
                                                        name="signup-cognome" type="text" placeholder="Cognome">
 						<span class="cd-error-message">"C'è un messaggio di errore!"</span>
 					</p>
@@ -175,7 +175,6 @@ Vado a includere il database che si trova su phpMyAdmin per:
                                         <p class="fieldset">
 						<label class="image-replace cd-username" for="signup-username">Indirizzo</label>
 						<input class="full-width has-padding has-border" id="signup-indirizzo"
-                                                       method="post"
                                                        name="signup-indirizzo" type="text" placeholder="Indirizzo">
 						<span class="cd-error-message">"C'è un messaggio di errore!"</span>
 					</p>
@@ -183,7 +182,6 @@ Vado a includere il database che si trova su phpMyAdmin per:
                                         <p class="fieldset">
 						<label class="image-replace cd-username" for="signup-username">Città</label>
 						<input class="full-width has-padding has-border" id="signup-citta"
-                                                       method="post"
                                                        name="signup-citta" type="text" placeholder="Città">
 						<span class="cd-error-message">"C'è un messaggio di errore!"</span>
 					</p>
@@ -191,7 +189,6 @@ Vado a includere il database che si trova su phpMyAdmin per:
                                         <p class="fieldset">
 						<label class="image-replace cd-username" for="signup-username">CAP</label>
                                                 <input class="full-width has-padding has-border" id="signup-cap"
-                                                       metod="post"
                                                        name="signup-cap" type="number" placeholder="CAP">
 						<span class="cd-error-message">"C'è un messaggio di errore!"</span>
 					</p>
@@ -255,8 +252,9 @@ Vado a includere il database che si trova su phpMyAdmin per:
             Il latte prodotto viene lavorato artigianalmente secondo le antiche regole dettate dalla migliore<br>
                 tradizione casearia sarda.</p><br><br>
                         <div class='accedi'><b><u>Accedi per acquistare!</u></b></div>
+                        <?php include 'login.php'; ?>
 			</ul>
-                        <?php if(isset($_POST['login'])) include_once "login.php"; ?>
+                       
 
 </div>
     </body>
@@ -277,12 +275,11 @@ Vado a includere il database che si trova su phpMyAdmin per:
         <a href="https://googleplus.com"><img class="visible4" src="go.png" onmouseout="this.src='go.png'" onmouseover="this.src='go1.png'" title="google+"></a>
             </div></div>
             <p class="copyright">La descrizione si trova <a href="descrizione.html">Qui</a><br>
-                    <?php
-                        if(isset($_SESSION["loggedIn"])&&$_SESSION["loggedIn"]){ 
-                            echo "Sei loggato come ".$username;
-                            javascript:close();
-                        }
-?>
                     <br> © Formaggi Pes</p></footer>
+    <?php 
+    
+    } 
+	$mysqli->close();
+?>
 </div>
 </html>
