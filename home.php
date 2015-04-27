@@ -124,7 +124,7 @@ Vado a includere il database che si trova su phpMyAdmin per:
 
 					<p class="fieldset">
 						<label class="image-replace cd-password" for="signin-password">Password</label>
-                                                <input class="full-width has-padding has-border" method="post" name="password" id="signin-password" type="text"  placeholder="Password">
+                                                <input class="full-width has-padding has-border" method="post" name="password" id="signin-password" type="password"  placeholder="Password">
 						<a href="#0" class="hide-password">Nascondi</a>
 						<span class="cd-error-message">"C'è un messaggio di errore!"</span>
 					</p>
@@ -252,24 +252,7 @@ Vado a includere il database che si trova su phpMyAdmin per:
 
 				<p class="cd-form-bottom-message"><a href="#0">Torna al login</a></p>
 			</div> <!-- cd-reset-password -->
-                        <?php
-                        session_start();
-                        if(isset($_REQUEST["login"])&&isset($_REQUEST["singup-username"])&&isset($_REQUEST["signup-password"])){
-    
-                        if(login($_REQUEST["signup-username"],$_REQUEST["signup-password"])){
-                            $_SESSION["loggedIn"]=true;
-                        }}else if(isset($_REQUEST["logout"])){
-                            logout();
-                            }function login($user,$password){if($user=="nic_pes"&&$password=="amm2014"){
-                            return true;
-}return false;
-} function logout(){
-        $_SESSION=array();
-        if(session_id()!=""||isset($_COOKIE[session_name()])){
-                    setcookie(session_name(),'',time() - 2592000, '/');
-        }
-        session_destroy();
-}?>	
+                        
 			<a href="#0" class="cd-close-form">Chiudi</a>
 		</div> <!-- cd-user-modal-container -->
 	</div> <!-- cd-user-modal -->
@@ -288,6 +271,8 @@ Vado a includere il database che si trova su phpMyAdmin per:
                 tradizione casearia sarda.</p><br><br>
                         <u>Accedi per acquistare!</u>
                         
+                        <?php session_start();
+                        ?>
 
 </div>
     </body>
