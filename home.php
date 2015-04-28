@@ -40,8 +40,8 @@ Vado a includere il database che si trova su phpMyAdmin per:
         <h2 id="secondo">Formaggi secondo natura</h2>
             <nav class="main-nav">
                 <ul id="menu">
-                    <li><a class="cd-signin" href="" text="Effettua il login">Login</a></li>
-                    <li><a class="cd-signup" href="" text="Registrati per acquistare i nostri prodotti">Registrati</a></li>
+                    <li><a class="cd-signin" text="Effettua il login">Login</a></li>
+                    <li><a class="cd-signup"text="Registrati per acquistare i nostri prodotti">Registrati</a></li>
             </ul></nav>
         </header>
 
