@@ -1,3 +1,9 @@
+<html>
+    <head>
+        <style> *{background-image: url( css/grey_wash_wall.png);}
+       </style>
+        <title>Login a Formaggi Pes: stato</title></head>
+    <body>
 <?php
 session_start();
 
@@ -31,3 +37,5 @@ if ($username && $password) {
     
 
     ?>
+        </body>
+</html>

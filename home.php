@@ -8,22 +8,21 @@ Titolo: Formaggi Pes (è un minicaseificio familiare con un vecchio sito su: www
 Si ringrazia il WEB.
 
 Nicola Pes
--->
+------------------------------------------------------------------------------------>
 
 
 <html>
-<!--
+<!----------------------------------------------------------------------------------- 
 Vado a includere il database che si trova su phpMyAdmin per:
 - gestire le sessioni; (compresa quella dell'amministratore con funzionalità dedicate)
 - gestire i formaggi;
--->
-
-<?php include 'dbclass.php';
+------------------------------------------------------------------------------------->
+<?php include_once 'dbclass.php';
 ?>
 
 
-    <html xmlns="http://www.w3.org/1999/xhtml" lang="it">
-    <head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
     <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <LINK REL="SHORTCUT ICON" HREF= "ico.ico">
@@ -276,9 +275,7 @@ Vado a includere il database che si trova su phpMyAdmin per:
             </div></div>
             <p class="copyright">La descrizione si trova <a href="descrizione.html">Qui</a><br>
                     <br> © Formaggi Pes</p></footer>
-    <?php 
-    
-    } 
+    <?php  
 	$mysqli->close();
 ?>
 </div>
