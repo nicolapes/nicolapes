@@ -17,8 +17,7 @@ Vado a includere il database che si trova su phpMyAdmin per:
 - gestire le sessioni; (compresa quella dell'amministratore con funzionalità dedicate)
 - gestire i formaggi;
 ------------------------------------------------------------------------------------->
-<?php include_once 'dbclass.php';
-?>
+
 
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="it">
@@ -251,7 +250,6 @@ Vado a includere il database che si trova su phpMyAdmin per:
             Il latte prodotto viene lavorato artigianalmente secondo le antiche regole dettate dalla migliore<br>
                 tradizione casearia sarda.</p><br><br>
                         <div class='accedi'><b><u>Accedi per acquistare!</u></b></div>
-                        <?php include 'login.php'; ?>
 			</ul>
                        
 
@@ -275,8 +273,6 @@ Vado a includere il database che si trova su phpMyAdmin per:
             </div></div>
             <p class="copyright">La descrizione si trova <a href="descrizione.html">Qui</a><br>
                     <br> © Formaggi Pes</p></footer>
-    <?php  
-	$mysqli->close();
-?>
+
 </div>
 </html>
