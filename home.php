@@ -41,8 +41,8 @@ Vado a includere il database che si trova su phpMyAdmin per:
         <h2 id="secondo">Formaggi secondo natura</h2>
             <nav class="main-nav">
                 <ul id="menu">
-		<li><a class="cd-signin" text="Effettua il login">Login</a></li>
-		<li><a class="cd-signup" text="Registrati per acquistare i nostri prodotti">Registrati</a></li>
+                    <li><a class="cd-signin" href="" text="Effettua il login">Login</a></li>
+                    <li><a class="cd-signup" href="" text="Registrati per acquistare i nostri prodotti">Registrati</a></li>
             </ul></nav>
         </header>
 
@@ -57,35 +57,35 @@ Vado a includere il database che si trova su phpMyAdmin per:
       <ul>
           <li class='has-sub' method="get" name="freschi"><a href="">Freschi</a>
             <ul>
-                <li><a href="" method="get" name="giovane">Giovane</a></li>
+                <li class='has-sub1'><a href="" method="get" name="giovane">Giovane</a></li>
             </ul>
          </li>
           <li class='has-sub'><a href="" method="get" name="semistagionati">Semistagionati</a>
             <ul>
-                <li><a href="" method="get" name="bonaera">Bonaera</a></li>
-               <li><a href="" method="get" name="campizzolu">Campizzolu</a></li>
+                <li class='has-sub1'><a href="" method="get" name="bonaera">Bonaera</a></li>
+               <li class='has-sub1'><a href="" method="get" name="campizzolu">Campizzolu</a></li>
             </ul>
          </li>
           
           <li class='has-sub'><a href="" name="stagionati">Stagionati</a>
             <ul>
-                <li><a href="" method="get" name="lochele">Lochele</a></li>
-               <li><a href="" method="get" name="sedilese">Sedilese</a></li>
+                <li class='has-sub1'><a href="" method="get" name="lochele">Lochele</a></li>
+               <li class='has-sub1'><a href="" method="get" name="sedilese">Sedilese</a></li>
             </ul>
          </li>
           <li class='has-sub'><a href="">Ricotta</a>
             <ul>
-                <li class='has-sub2'><a href="" method="get" name="ricotta">Ricotta</a></li>
-                <li class='has-sub2'><a href="" method="get" name="ricottabasilico">Ricotta al basilico</a></li>
-                <li class='has-sub2'><a href="" method="get" name="ricottapeperoncino">Ricotta al peperoncino</a></li>
-               <li class='has-sub2'><a method="get" name="ricottalimone">Ricotta al limone</a></li>
+                <li class='has-sub1'><a href="" method="get" name="ricotta">Ricotta</a></li>
+                <li class='has-sub1'><a href="" method="get" name="ricottabasilico">Ricotta al basilico</a></li>
+                <li class='has-sub1'><a href="" method="get" name="ricottapeperoncino">Ricotta al peperoncino</a></li>
+               <li class='has-sub1'><a method="get" name="ricottalimone">Ricotta al limone</a></li>
             </ul>
          </li>
           <li class='has-sub'><a href="" name="spalmabili">Spalmabili</a>
             <ul>
-                <li class='has-sub2'><a href="" method="get" name="boniverde">Bonì Verde</a></li>
-                <li class='has-sub2'><a href="" method="get" name="boniarancione">Bonì Arancione</a></li>
-                <li class='has-sub2'><a href="" method="get" name="bonirosso">Bonì Rosso</a></li>
+                <li class='has-sub1'><a href="" method="get" name="boniverde">Bonì Verde</a></li>
+                <li class='has-sub1'><a href="" method="get" name="boniarancione">Bonì Arancione</a></li>
+                <li class='has-sub1'><a href="" method="get" name="bonirosso">Bonì Rosso</a></li>
             </ul>
          </li></a></li>
       </ul>

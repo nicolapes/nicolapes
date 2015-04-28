@@ -15,8 +15,9 @@
    position: fixed;
    top: 105px;
    left: 4px;
-   color: grey ;
+   color: #F0D890;
    font-size: 40px;
+   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .accedi{
@@ -93,7 +94,7 @@ footer{
     height: 100%;
     text-align: center;
     font-size: large;
-    color: #307860;
+    color: white;
     border-top: 3px solid black;
     z-index: 3;
 }
