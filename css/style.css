@@ -154,7 +154,7 @@ html {
 #logo{
     z-index: 2; /* in primo piano nella pagina (indipendente dall'ordine html) */
     position: fixed;
-    right: 40%;
+    right: 46%;
     top: 7%;
     border: 0;
     padding: 0;

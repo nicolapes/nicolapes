@@ -241,7 +241,7 @@ Vado a includere il database che si trova su phpMyAdmin per:
 
 
 <div id="immagine">
-    <img alt="colline" src="./Cattura.JPG"/>
+    <img alt="colline" src="babbo.jpeg"/>
 </div>
 <div id="contenuto">
     <p>Dal 1975 in una incantevole e silenziosa vallata nel cuore della Sardegna,<br>
