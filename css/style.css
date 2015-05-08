@@ -22,6 +22,11 @@
 
 .accedi{
     color: #F0F078;
+    font-size: 180%;
+}
+
+a:visited{
+    color: yellowgreen;
 }
 
 main p {
@@ -163,6 +168,13 @@ html {
     left: 25%;
     top: 23%;
     z-index: -1;
+}
+
+#elefante{
+    width: 20%;
+    height: 20%;
+    float: left;
+    margin: 5px;
 }
 
 

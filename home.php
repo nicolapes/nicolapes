@@ -249,8 +249,10 @@ Vado a includere il database che si trova su phpMyAdmin per:
 
             Il latte prodotto viene lavorato artigianalmente secondo le antiche regole dettate dalla migliore<br>
                 tradizione casearia sarda.</p><br><br>
-                        <div class='accedi'><b><u>Accedi per acquistare!</u></b></div>
-			</ul>
+                        <img id="elefante" src="elefante.png" />
+                        <div class='accedi'><b><u>LAVORI IN CORSO</u></b></div>
+                           
+                        <i>Chi siamo?: <a href="https://www.youtube.com/channel/UCFrRsYXxxwcIA8YSAkLVrJQ"><u>Canale NicPes</u></a></i>
                        
 
 </div>
